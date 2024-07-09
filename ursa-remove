@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+u_root=$(./ursa--detect)
+
+# Unmount, detach, clean up
+./ursa--unmount ${u_root}
+./ursa--detach ${u_root}
+./ursa--cleanup
