@@ -4,3 +4,4 @@ echo -e "Please specify the directory to install:"
 read -p "> " u_dir
 eval target_dir="$u_dir"
 cp ./ursa-* $target_dir
+echo "Deployment complete!"

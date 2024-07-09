@@ -6,4 +6,5 @@ u_root=$(./ursa--detect)
 ./ursa--mount ${u_root}
 
 # Open all vaults with default file managers
+echo "Opening vault directories..."
 open /mnt/vault-a /mnt/vault-b /mnt/vault-b /mnt/vault-c

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "Unmounting vault-a, vault-b, and vault-c"
 sudo rm -rf /mnt/vault-a
 sudo rm -rf /mnt/vault-b
 sudo rm -rf /mnt/vault-c

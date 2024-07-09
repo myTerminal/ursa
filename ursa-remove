@@ -3,6 +3,7 @@
 u_root=$(./ursa--detect)
 
 # Unmount, detach, clean up
+echo "Removing ${u_root}..."
 ./ursa--unmount ${u_root}
 ./ursa--detach ${u_root}
 ./ursa--cleanup
