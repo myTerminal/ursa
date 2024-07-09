@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo rm -rf /mnt/vault-a
+sudo rm -rf /mnt/vault-b
+sudo rm -rf /mnt/vault-c

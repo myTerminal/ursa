@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Unmount vaults
+sudo umount /mnt/vault-a
+sudo umount /mnt/vault-b
+sudo umount /mnt/vault-c
+
+# Close vaults
+sudo cryptsetup close vault-a
+sudo cryptsetup close vault-b
+sudo cryptsetup close vault-c
+
+# Unmount home volume
+udisksctl unmount -b ${1}4
