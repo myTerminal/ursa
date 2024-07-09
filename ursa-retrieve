@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+u_root=$(./ursa--detect)
+
+# Mount
+./ursa--mount ${u_root}
+
+# Open all vaults with default file managers
+open /mnt/vault-a /mnt/vault-b /mnt/vault-b /mnt/vault-c

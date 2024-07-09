@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Unlock vaults
+sudo cryptsetup open ${1}1 vault-a
+sudo cryptsetup open ${1}2 vault-b
+sudo cryptsetup open ${1}3 vault-c
+
+# Mount vaults to directories
+sudo mkdir /mnt/vault-a /mnt/vault-b /mnt/vault-c
+sudo mount /dev/mapper/vault-a /mnt/vault-a
+sudo mount /dev/mapper/vault-b /mnt/vault-b
+sudo mount /dev/mapper/vault-c /mnt/vault-c

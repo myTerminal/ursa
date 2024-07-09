@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Determine current command location
+if [ $(command -v realpath) ]; then
+    root_directory=$(readlink -f "${BASH_SOURCE[0]}" | xargs realpath | xargs dirname)
+else
+    root_directory=$(cd "$(dirname $BASH_SOURCE[0])" ; pwd -P)
+fi
+
+# Determine block devices to operate on
+u_volume=$(df $root_directory | grep /dev/ | cut -d ' ' -f1)
+u_root=${u_volume%?}
+
+# Return the root
+echo ${u_root}
