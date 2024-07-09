@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+u_root=$(./ursa--detect)
+
+# Mount
+./ursa--mount ${u_root}
+
+# TODO: Determine the source and destination volumes
+
+# TODO: Initiate backup (either manual or automated)
+
+# TODO: Create markers (timestamp)
+
+# TODO: Umount, and detach?
