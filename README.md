@@ -75,6 +75,10 @@ Install a graphical Linux distribution on the fourth volume, and deploy *ursa* o
 
 ## Setup
 
+To prepare the environment with external dependencies, run:
+
+    make setup
+
 In order to set *ursa* on an external storage drive, clone it to a local directory, and run the following command:
 
     ./ursa-deploy
