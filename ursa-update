@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Get latest ursa in /tmp
+git clone https://github.com/myTerminal/ursa /tmp/ursa
+
+# Determine current command location
+if [ $(command -v realpath) ]; then
+    root_directory=$(readlink -f "${BASH_SOURCE[0]}" | xargs realpath | xargs dirname)
+else
+    root_directory=$(cd "$(dirname $BASH_SOURCE[0])" ; pwd -P)
+fi
+
+# Deploy commands to determined location
+cp /tmp/ursa/ursa-* $root_directory
+
+# Clean /tmp
+rm -rf /tmp/ursa
