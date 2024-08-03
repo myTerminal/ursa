@@ -48,7 +48,7 @@ rm -rf ${vault_dest}/*
 cp -R ${vault_source}/* ${vault_dest}
 
 # Create markers (timestamp)
-date > ${vault_dest}/ursa-tag
+date > ${vault_dest}/.ursa-tag
 
 # Umount, and detach
 ./ursa--unmount
