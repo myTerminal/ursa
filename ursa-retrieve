@@ -5,6 +5,22 @@ u_root=$(./ursa--detect)
 # Mount
 ./ursa--mount ${u_root}
 
-# Open all vaults with default file managers
-echo "Opening vault directories..."
-open /mnt/vault-a /mnt/vault-b /mnt/vault-c
+# Open the most recently updated vault with default file managers
+vault_a_time=$(stat -c "%Y" /mnt/vault-a)
+vault_b_time=$(stat -c "%Y" /mnt/vault-b)
+vault_c_time=$(stat -c "%Y" /mnt/vault-c)
+if (( vault_a_time > vault_b_time )); then
+    if (( vault_a_time > vault_c_time )); then
+        vault_recent=/mnt/vault-a
+    else
+        vault_recent=/mnt/vault-c
+    fi
+else
+    if (( vault_b_time > vault_c_time )); then
+        vault_recent=/mnt/vault-b
+    else
+        vault_recent=/mnt/vault-c
+    fi
+fi
+echo "Opening the most recently updated vault directory..."
+open $(vault-recent)

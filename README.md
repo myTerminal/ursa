@@ -105,7 +105,7 @@ If you simply need to retrieve data from the three data volumes, run:
 
     ./ursa-retrieve
 
-You should be presented with three file explorer windows for the three decrypted data volumes, each having the same exact data. 
+You should be presented with a file explorer window with the most recent data recorded by *ursa*.
 
 ### Regular Backups
 
