@@ -5,10 +5,50 @@ u_root=$(./ursa--detect)
 # Mount
 ./ursa--mount ${u_root}
 
-# TODO: Determine the source and destination volumes
+# Determine the source and destination volumes
+vault_a_time=$(stat -c "%Y" /mnt/vault-a)
+vault_b_time=$(stat -c "%Y" /mnt/vault-b)
+vault_c_time=$(stat -c "%Y" /mnt/vault-c)
+if (( vault_a_time > vault_b_time )); then
+    if (( vault_a_time > vault_c_time )); then
+        vault_source=/mnt/vault-a
+        if (( vault_b_time > vault_c_time )); then
+            vault_dest=/mnt/vault-c
+        else
+            vault_dest=/mnt/vault-b
+        fi
+    else
+        vault_source=/mnt/vault-c
+        if (( vault_a_time > vault_b_time )); then
+            vault_dest=/mnt/vault-b
+        else
+            vault_dest=/mnt/vault-a
+        fi
+    fi
+else
+    if (( vault_b_time > vault_c_time )); then
+        vault_source=/mnt/vault-b
+        if (( vault_a_time > vault_c_time )); then
+            vault_dest=/mnt/vault-c
+        else
+            vault_dest=/mnt/vault-a
+        fi
+    else
+        vault_source=/mnt/vault-c
+        if (( vault_a_time > vault_b_time )); then
+            vault_dest=/mnt/vault-b
+        else
+            vault_dest=/mnt/vault-a
+        fi
+    fi
+fi
 
-# TODO: Initiate backup (either manual or automated)
+# Initiate backup
+rm -rf ${vault_dest}/*
+cp -R ${vault_source}/* ${vault_dest}
 
-# TODO: Create markers (timestamp)
+# Create markers (timestamp)
+date > ${vault_dest}/ursa-tag
 
-# TODO: Umount, and detach?
+# Umount, and detach
+./ursa--unmount
