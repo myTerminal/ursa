@@ -30,7 +30,7 @@ The system has been designed with an external storage drive in mind with the fol
 1. `/dev/sdb1` - Backup volume 1
 2. `/dev/sdb2` - Backup volume 2
 3. `/dev/sdb3` - Backup volume 3
-4. `/dev/sdb4 - Live volume hosting *ursa*
+4. `/dev/sdb4` - Live volume hosting *ursa*
 
 The above specification assumes that the external drive has been identified as `/dev/sdb` block device.
 
