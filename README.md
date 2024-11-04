@@ -148,3 +148,4 @@ In order to update *ursa* on the backup drive, simply run:
 ## TODO
 
 - Implement progress update during long-running processes
+- Implement ".desktop" files for normies
