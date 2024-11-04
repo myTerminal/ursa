@@ -107,13 +107,25 @@ You should be presented with a file explorer window with the most recent data re
 
 ### Regular Backups
 
-*ursa* has been designed to work with three sets of identical data volumes. It is recommended to run a replication cycle at regular intervals to avoid data loss. The reason for having thee data volumes is that if during a replication cycle, a volume has been identified with issues, another one can be used for the current cycle, and the problematic volume could still be repaired from one of the two working volumes.
+In order to backup data, you may run:
 
-To start a backup, simply run:
+    ./ursa-retrieve
 
-    ./ursa-backup
+...which will find the most recently updated (and hence most up-to-date data volume) and unlock it for syncing files for a backup. Although, it is recommended to occasionally also sync data between all the three data-volumes and keep them in sync. This can be done using:
 
-The scripts automatically unlocks the vaults, identify the newest and the oldest replicated volume, and the user is suggested to use the former to replicate the latter. This way, the oldest replicated volume becomes the newest for the next cycle, and all the three volumes get checked for data integrity every third replication cycle. *ursa* maintains the timestamp using an empty file named `.ursa-tag` at the root of each data volumes.
+    ./ursa-sync
+
+This will open [meld](https://meldmerge.org) on all the three data volumes for manual sync.
+
+### Integrity Refresh (Suggested Once or Twice a Year)
+
+It is recommended to run an integrity refresh occasionally to avoid data loss. The reason for having thee data volumes is that if during a replication cycle, a volume has been identified with issues, another one can be used for the current cycle, and the problematic volume could still be repaired from one of the two working volumes.
+
+To start an integrity refresh cycle, simply run:
+
+    ./ursa-refresh
+
+The scripts automatically unlocks the vaults, identify the newest and the oldest replicated volume, and the user is suggested to use the former to replicate the latter. This way, the oldest replicated volume becomes the newest for the next cycle, and effectively, all the three volumes get checked for data integrity every third replication cycle. *ursa* maintains the timestamp using an empty file named `.ursa-tag` at the root of each data volumes.
 
 ### Removing the Backup Drive
 
