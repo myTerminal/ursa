@@ -132,3 +132,7 @@ In order to update *ursa* on the backup drive, simply run:
 - [cryptsetup](https://gitlab.com/cryptsetup/cryptsetup)
 - [udisks2](https://www.freedesktop.org/wiki/Software/udisks)
 - [meld](https://meldmerge.org)
+
+## TODO
+
+- Implement progress update during long-running processes
