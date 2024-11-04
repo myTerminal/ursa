@@ -87,17 +87,15 @@ Install a graphical Linux distribution on the fourth volume, and deploy *ursa* o
 
 ## Setup
 
-To prepare the environment with external dependencies, run:
+In order to set up *ursa* on an external storage drive, clone it to a local directory, and run the following command:
 
     make setup
 
-In order to set *ursa* on an external storage drive, clone it to a local directory, and run the following command:
-
-    ./ursa-deploy
-
-You will be prompted to enter a location to the fourth live volume on the target drive. Once a location is provided, and if everything goes as expected, you should be able to see the commands deployed to the specified device.
+This will prepare the environment with external dependencies, and internally run `./ursa-deploy`, which will prompt for a location to the fourth live volume on the target drive. Once a location is provided, and if everything goes as expected, you should be able to see the commands deployed to the specified device.
 
 ## Usage
+
+*ursa* has been designed to maintain user data in a set of three identical data volumes. You may maintain your data backup in only one of the three, though keeping all three of them in sync is recommended.
 
 ### Retrieving Data
 
