@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-# TODO: Implement non-live operation for syncing backup
-
-u_root=$(./ursa--detect)
+# Determine the root
+if [ -z "$1" ]; then
+    u_root=$(./ursa--detect)
+else
+    u_root=$1
+fi
 
 # Mount
 ./ursa--mount ${u_root}
@@ -25,4 +28,4 @@ else
     fi
 fi
 echo "Opening the most recently updated vault directory..."
-open $(vault-recent)
+xdg-open $vault_recent

@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-u_root=$(./ursa--detect)
-
-# TODO: Use it for a non-live session
+# Determine the root
+if [ -z "$1" ]; then
+    u_root=$(./ursa--detect)
+else
+    u_root=$1
+fi
 
 # Unmount, detach, clean up
 echo "Removing ${u_root}..."

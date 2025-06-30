@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-u_root=$(./ursa--detect)
+# Determine the root
+if [ -z "$1" ]; then
+    u_root=$(./ursa--detect)
+else
+    u_root=$1
+fi
 
 # Mount
 ./ursa--mount ${u_root}
@@ -51,5 +56,4 @@ cp -R ${vault_source}/* ${vault_dest}
 date > ${vault_dest}/.ursa-tag
 
 # Umount, and detach
-# TODO: Use ursa-remove here
-./ursa--unmount
+./ursa-remove $u_root

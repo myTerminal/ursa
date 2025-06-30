@@ -111,13 +111,17 @@ In order to backup data, you may run:
 
     ./ursa-retrieve <device-name>
 
+for example:
+
+    ./ursa-retrieve /dev/sdb
+
 ...which will find the most recently updated (and hence most up-to-date data volume) and unlock it for syncing files for a backup. Although, it is recommended to occasionally also sync data between all the three data-volumes and keep them in sync. This can be done using:
 
     ./ursa-sync
 
 This will open [meld](https://meldmerge.org) on all the three data volumes for manual sync.
 
-Safely remove the drive using `./ursa-remove`.
+Safely remove the drive using `./ursa-remove <device-name>`.
 
 ### Integrity Refresh (Suggested Once or Twice a Year)
 
@@ -125,7 +129,11 @@ It is recommended to run an integrity refresh occasionally to avoid data loss. T
 
 To start an integrity refresh cycle, simply run:
 
-    ./ursa-refresh
+    ./ursa-refresh <device-name>
+
+for example:
+
+    ./ursa-refresh /dev/sdb
 
 The scripts automatically unlocks the vaults, identify the newest and the oldest replicated volume, and the user is suggested to use the former to replicate the latter. This way, the oldest replicated volume becomes the newest for the next cycle, and effectively, all the three volumes get checked for data integrity every third replication cycle. *ursa* maintains the timestamp using an empty file named `.ursa-tag` at the root of each data volumes.
 
@@ -135,7 +143,11 @@ The device should be automatically removed once done.
 
 Removing the backup drive can be performed using a simple command:
 
-    ./ursa-remove
+    ./ursa-remove <device-name>
+
+for example:
+
+    ./ursa-remove /dev/sdb
 
 ### Updating *ursa*
 
