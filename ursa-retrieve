@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO: Implement non-live operation for syncing backup
+
 u_root=$(./ursa--detect)
 
 # Mount

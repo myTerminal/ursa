@@ -51,4 +51,5 @@ cp -R ${vault_source}/* ${vault_dest}
 date > ${vault_dest}/.ursa-tag
 
 # Umount, and detach
+# TODO: Use ursa-remove here
 ./ursa--unmount

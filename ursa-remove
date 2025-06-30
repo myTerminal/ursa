@@ -2,6 +2,8 @@
 
 u_root=$(./ursa--detect)
 
+# TODO: Use it for a non-live session
+
 # Unmount, detach, clean up
 echo "Removing ${u_root}..."
 ./ursa--unmount ${u_root}
