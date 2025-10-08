@@ -14,4 +14,4 @@ sudo cryptsetup close vault-c
 
 # Unmount home volume
 echo "Unmounting live partition..."
-udisksctl unmount -b ${1}4
+udisksctl unmount -b ${1}2
