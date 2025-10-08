@@ -55,9 +55,9 @@ The following is the accepted partition scheme:
 
 Format backup partitions with LUKS.
 
+    cryptsetup -y -v luksFormat --type luks1 /dev/sdb3
     cryptsetup -y -v luksFormat --type luks1 /dev/sdb4
     cryptsetup -y -v luksFormat --type luks1 /dev/sdb5
-    cryptsetup -y -v luksFormat --type luks1 /dev/sdb6
 
 It is assumed that a Linux setup is installed on `/dev/sdb2` with `/dev/sdb1` as EFI.
 
