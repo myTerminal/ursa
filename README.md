@@ -1,6 +1,6 @@
-# ursa-major
+# ursa
 
-[![License](https://img.shields.io/github/license/myTerminal/see-link.svg)](https://opensource.org/licenses/MIT)  
+[![License](https://img.shields.io/github/license/myTerminal/ursa.svg)](https://opensource.org/licenses/MIT)  
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)
 
 My opinionated data backup and retrieval system
