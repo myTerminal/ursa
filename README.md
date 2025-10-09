@@ -68,6 +68,11 @@ Run the following commands to set up the backup volumes:
     cryptsetup open /dev/sdb4 vault-b
     cryptsetup open /dev/sdb5 vault-c
 
+    # Format volumes as EXT4
+    mkfs.ext4 /dev/mapper/vault-a
+    mkfs.ext4 /dev/mapper/vault-b
+    mkfs.ext4 /dev/mapper/vault-c
+
     # Create directories for mount points
     mkdir /mnt/vault-a /mnt/vault-b /mnt/vault-c
 
@@ -79,10 +84,8 @@ Run the following commands to set up the backup volumes:
     # Set permissions
     chmod 777 -R /mnt/vault-a /mnt/vault-b /mnt/vault-c
 
-    # Format volumes as EXT4
-    mkfs.ext4 /dev/mapper/vault-a
-    mkfs.ext4 /dev/mapper/vault-b
-    mkfs.ext4 /dev/mapper/vault-c
+    # Unmount backup vaults
+    umount /mnt/vault-a /mnt/vault-b /mnt/vault-c
 
     # Close backup volumes
     cryptsetup close vault-a
