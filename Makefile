@@ -17,6 +17,13 @@ else
 	@echo "Attempting to install cryptsetup using Crater..."
 	/tmp/crater-cli/crater install cryptsetup
 endif
+ifneq ($(shell command -v xdg-open),)
+	@echo "xfg-utils found."
+else
+	@echo "xfg-utils not found!"
+	@echo "Attempting to install xfg-utils using Crater..."
+	/tmp/crater-cli/crater install xfg-utils
+endif
 ifneq ($(shell command -v udisksctl),)
 	@echo "udisks2 found."
 else
