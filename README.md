@@ -97,7 +97,11 @@ Finally, unmount the auxiliary partition.
     udisksctl unmount -b /dev/sdb2
     udisksctl power-off -b /dev/sdb
 
-Install a graphical Linux distribution on the fourth volume, and deploy *ursa* on it. Follow the next section on deploying *ursa*. Preferably enable running `sudo` commands without a password.
+Install a graphical Linux distribution on the fourth volume, and deploy *ursa* on it. Follow the next section on deploying *ursa*.
+
+> **Note:** Enable [auto login](https://wiki.archlinux.org/title/SDDM#Autologin) without a password for seamless experience.
+
+> **Note:** Enable running running `sudo` commands without a password, or else a sudo password may be prompted for.
 
 ## Setup
 
