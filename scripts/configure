@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+mkdir ~/.config/autostart
+echo "[Desktop Entry]
+Type=Application
+Exec=sh -c 'Thunar \"\${URSA_VAULT_DIR}\"'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Thunar
+" > ~/.config/autostart/thunar.desktop

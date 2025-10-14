@@ -1,8 +1,14 @@
 SHELL = /bin/sh
 
+ifeq ($(PREFIX),)
+	PREFIX := /usr/local
+endif
+
 help:
 	@echo "Use one of the following options:"
 	@echo "setup - Set up ursa"
+	@echo "remove - Remove ursa"
+	@echo "redeploy - Re-setup ursa"
 
 crater-get:
 	@echo "Setting up Crater for temporary use..."
@@ -31,6 +37,13 @@ else
 	@echo "Attempting to install udisks2 using Crater..."
 	/tmp/crater-cli/crater install udisks2
 endif
+ifneq ($(shell command -v startxfce4),)
+	@echo "xfce4 found."
+else
+	@echo "xfce4 not found!"
+	@echo "Attempting to install xfce4 using Crater..."
+	/tmp/crater-cli/crater install xfce4
+endif
 ifneq ($(shell command -v meld),)
 	@echo "meld found."
 else
@@ -46,5 +59,19 @@ crater-remove:
 
 req: crater-get deps crater-remove
 
-setup: req
-	./ursa-deploy
+place:
+	@echo "Installing commands..."
+	sudo install ./commands/* $(PREFIX)/bin/
+	@echo "Commands installed."
+
+setup: req place
+	./scripts/configure
+	@echo "Setup complete!"
+
+remove:
+	@echo "Removing ursa..."
+	sudo rm $(PREFIX)/bin/ursa*
+	rm ~/.config/autostart/thunar.desktop
+	@echo "ursa has been removed!"
+
+redeploy: remove setup

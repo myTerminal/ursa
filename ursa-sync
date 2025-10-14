@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# Use meld to sync the three data-volumes
-meld /mnt/vault-a /mnt/vault-b /mnt/vault-c

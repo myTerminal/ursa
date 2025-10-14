@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-echo "Powering-off ${2}..."
-udisksctl power-off -b ${2}
