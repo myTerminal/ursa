@@ -24,11 +24,11 @@ else
 	/tmp/crater-cli/crater install cryptsetup
 endif
 ifneq ($(shell command -v xdg-open),)
-	@echo "xfg-utils found."
+	@echo "xdg-utils found."
 else
-	@echo "xfg-utils not found!"
-	@echo "Attempting to install xfg-utils using Crater..."
-	/tmp/crater-cli/crater install xfg-utils
+	@echo "xdg-utils not found!"
+	@echo "Attempting to install xdg-utils using Crater..."
+	/tmp/crater-cli/crater install xdg-utils
 endif
 ifneq ($(shell command -v udisksctl),)
 	@echo "udisks2 found."
