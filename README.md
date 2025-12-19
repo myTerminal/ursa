@@ -32,6 +32,7 @@ Refer to the [docs](./docs) for more information about setting up and then using
 - [cryptsetup](https://gitlab.com/cryptsetup/cryptsetup)
 - [xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils)
 - [udisks2](https://www.freedesktop.org/wiki/Software/udisks)
+- [xorg](https://www.x.org)
 - [xfce4](https://www.xfce.org)
 - [meld](https://meldmerge.org)
 

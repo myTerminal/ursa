@@ -37,6 +37,13 @@ else
 	@echo "Attempting to install udisks2 using Crater..."
 	/tmp/crater-cli/crater install udisks2
 endif
+ifneq ($(shell command -v xorg),)
+	@echo "xorg found."
+else
+	@echo "xorg not found!"
+	@echo "Attempting to install xorg using Crater..."
+	/tmp/crater-cli/crater install xorg
+endif
 ifneq ($(shell command -v startxfce4),)
 	@echo "xfce4 found."
 else
