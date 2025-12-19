@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir ~/.config/autostart
+mkdir -p ~/.config/autostart
 echo "[Desktop Entry]
 Type=Application
 Exec=sh -c 'Thunar \"\${URSA_VAULT_DIR}\"'
